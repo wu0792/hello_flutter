@@ -76,19 +76,13 @@ class _TopSearchState extends State<TopSearch> {
       ],
     );
 
-    return Scaffold(
-      body: SafeArea(
-        minimum: const EdgeInsets.symmetric(horizontal: 5),
-        // child: Text('data'),
-        child: Tabs(
-          titles: ['单程', '往返', '多程'].toList(),
-          tabViews: [
-            owPanel,
-            Text('往返'),
-            Text('多程'),
-          ],
-        ),
-      ),
+    return Tabs(
+      titles: ['单程', '往返', '多程'].toList(),
+      tabViews: [
+        owPanel,
+        Text('往返'),
+        Text('多程'),
+      ].toList(),
     );
   }
 }

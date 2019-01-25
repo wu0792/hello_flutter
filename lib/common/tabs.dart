@@ -14,12 +14,12 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
   _TabsState(List<String> titles, List<Widget> views) {
     tabTitles = titles.map((String item) {
       return Tab(text: item);
-    });
+    }).toList();
     tabViews = views;
   }
 
   List<Tab> tabTitles = [];
-  List<Tab> tabViews = [];
+  List<Widget> tabViews = [];
 
   TabController _tabController;
 
