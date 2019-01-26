@@ -37,16 +37,31 @@ class _TabsState extends State<Tabs> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: tabTitles,
-        ),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.green,
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: tabViews,
+      child: Scaffold(
+        body: Container(
+          child: Flex(direction: Axis.vertical, children: <Widget>[
+            Container(
+              color: Colors.blue[200],
+              child: TabBar(
+                controller: _tabController,
+                tabs: tabTitles,
+                labelColor: Colors.black,
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              child: Container(
+                  child: TabBarView(
+                controller: _tabController,
+                children: tabViews,
+              )),
+            )
+          ]),
+        ),
       ),
     );
   }
